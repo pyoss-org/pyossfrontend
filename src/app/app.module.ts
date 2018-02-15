@@ -3,16 +3,21 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { AgendaviewComponent } from './agendaview/agendaview.component';
+import {TimeslotService} from './timeslot.service';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AgendaviewComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [TimeslotService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

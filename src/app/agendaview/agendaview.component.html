@@ -1,0 +1,7 @@
+<p>
+  agendaview works!
+</p>
+
+<div *ngIf="timeslots">
+  <li *ngFor="let timeslot of timeslots">{{timeslot.available}}</li>
+</div>
