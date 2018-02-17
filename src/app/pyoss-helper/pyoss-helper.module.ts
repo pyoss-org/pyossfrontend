@@ -1,14 +1,14 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {BlockComponent} from './block/block.component';
+import {BlockDirective} from './directives/block.directive';
 
 @NgModule({
     imports: [
         CommonModule,
     ],
-    declarations: [BlockComponent],
+    declarations: [BlockDirective],
     exports: [
-        BlockComponent,
+        BlockDirective,
     ],
 })
 export class PyossHelperModule {
