@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'pyoss-row',
-  templateUrl: './row.component.html',
-  styleUrls: ['./row.component.css']
+    selector: 'pyoss-row',
+    templateUrl: './row.component.html',
+    styleUrls: ['./row.component.css'],
 })
 export class RowComponent implements OnInit {
 
-  constructor() { }
+    @Input('class')
+    private class: string;
 
-  ngOnInit() {
-  }
+    constructor() {
+    }
+
+    ngOnInit() {
+    }
 
 }

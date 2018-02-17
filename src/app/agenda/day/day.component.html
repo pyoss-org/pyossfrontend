@@ -1,8 +1,8 @@
 <div class="day">
     <pyoss-row class="header">
-            <pyoss-button pyossCol [col]="4">Previous</pyoss-button>
-            <div pyossCol [col]="4">{{ title }}</div>
-            <pyoss-button pyossCol [col]="4">Next</pyoss-button>
+        <pyoss-button pyossCol [col]="4">Previous</pyoss-button>
+        <div pyossCol [col]="4">{{ title }}</div>
+        <pyoss-button pyossCol [col]="4">Next</pyoss-button>
     </pyoss-row>
     <pyoss-row *ngFor="let slot of slotsInDay">
         <pyoss-timeslot [model]="slot" pyossCol>

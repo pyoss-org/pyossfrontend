@@ -18,6 +18,6 @@ export class TimeslotComponent implements OnInit {
     }
 
     calculateColor(available: boolean): string {
-        return available ? 'green' : 'red'
+        return available ? '#AED581' : '#E57373'
     }
 }
