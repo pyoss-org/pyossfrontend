@@ -4,3 +4,18 @@
 <div *ngIf="timeslots">
   <li *ngFor="let timeslot of timeslots">{{timeslot.available}}</li>
 </div>
+
+
+<pyoss-page-wrapper>
+  <pyoss-row>
+    <div pyossCol [col]="11">col1</div>
+    <div pyossCol [col]="1">col2</div>
+  </pyoss-row>
+
+  <pyoss-row>
+    <div pyossCol>col3</div>
+    <div pyossCol>col4</div>
+    <div pyossCol>col5</div>
+  </pyoss-row>
+</pyoss-page-wrapper>
+
