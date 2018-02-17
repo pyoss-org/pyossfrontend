@@ -1,0 +1,37 @@
+[
+  {
+    "from": {
+      "nano": 0,
+      "year": 2018,
+      "monthValue": 3,
+      "dayOfMonth": 3,
+      "hour": 3,
+      "minute": 0,
+      "second": 0,
+      "month": "MARCH",
+      "dayOfWeek": "SATURDAY",
+      "dayOfYear": 62,
+      "chronology": {
+        "id": "ISO",
+        "calendarType": "iso8601"
+      }
+    },
+    "to": {
+      "nano": 0,
+      "year": 2018,
+      "monthValue": 3,
+      "dayOfMonth": 3,
+      "hour": 4,
+      "minute": 0,
+      "second": 0,
+      "month": "MARCH",
+      "dayOfWeek": "SATURDAY",
+      "dayOfYear": 62,
+      "chronology": {
+        "id": "ISO",
+        "calendarType": "iso8601"
+      }
+    },
+    "available": true
+  }
+]

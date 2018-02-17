@@ -1,0 +1,12 @@
+.day {
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.header {
+    height: 70px;
+    line-height: 70px;
+    font-size: x-large;
+    text-align: center;
+}

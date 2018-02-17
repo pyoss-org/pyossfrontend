@@ -1,21 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import {TimeslotService} from '../timeslot.service';
-import {Timeslot} from '../Timeslot';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'pyoss-agenda',
-  templateUrl: './agenda.component.html',
-  styleUrls: ['./agenda.component.css']
+    selector: 'pyoss-agenda',
+    templateUrl: './agenda.component.html',
+    styleUrls: ['./agenda.component.css'],
 })
 export class AgendaComponent implements OnInit {
-  private timeslots: Timeslot[];
 
-  constructor(private timeslotService: TimeslotService) { }
+    constructor() {
+    }
 
-  ngOnInit() {
-    this.timeslotService.getAll().subscribe(
-      data => this.timeslots = data
-    );
-  }
+    ngOnInit() {
+    }
 
 }
