@@ -6,7 +6,7 @@ import {Directive, HostBinding, Input, OnInit} from '@angular/core';
 export class ColumnDirective implements OnInit {
 
     @Input('col')
-    private amount: number;
+    private colAmount: number;
 
     @HostBinding('class')
     private elementClass: string;
@@ -15,7 +15,7 @@ export class ColumnDirective implements OnInit {
     }
 
     ngOnInit(): void {
-        this.elementClass = ColumnDirective.format('col', this.amount);
+        this.elementClass = ColumnDirective.format('col', this.colAmount);
     }
 
     private static format(base: string, amount: number): string {
@@ -23,5 +23,11 @@ export class ColumnDirective implements OnInit {
             return `${base}-${amount}`;
         }
         return base;
+    }
+
+    private static formatOffset(base: string, offset: number): string {
+        if(offset) {
+            return this.format(base, offset);
+        }
     }
 }
