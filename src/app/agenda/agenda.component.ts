@@ -3,11 +3,11 @@ import {TimeslotService} from '../timeslot.service';
 import {Timeslot} from '../Timeslot';
 
 @Component({
-  selector: 'pyoss-agendaview',
-  templateUrl: './agendaview.component.html',
-  styleUrls: ['./agendaview.component.css']
+  selector: 'pyoss-agenda',
+  templateUrl: './agenda.component.html',
+  styleUrls: ['./agenda.component.css']
 })
-export class AgendaviewComponent implements OnInit {
+export class AgendaComponent implements OnInit {
   private timeslots: Timeslot[];
 
   constructor(private timeslotService: TimeslotService) { }
