@@ -3,7 +3,7 @@ import {TimeslotService} from '../timeslot.service';
 import {Timeslot} from '../Timeslot';
 
 @Component({
-  selector: 'app-agendaview',
+  selector: 'pyoss-agendaview',
   templateUrl: './agendaview.component.html',
   styleUrls: ['./agendaview.component.css']
 })
