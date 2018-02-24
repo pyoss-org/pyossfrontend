@@ -24,8 +24,9 @@ export class TimeslotComponent implements OnInit {
 
   doBook() {
     this.timeslotService.doBooking(this.model).subscribe(
-      response => console.log(response),
+      () => (this.model.available = false),
       error => console.log(error)
     );
   }
+
 }

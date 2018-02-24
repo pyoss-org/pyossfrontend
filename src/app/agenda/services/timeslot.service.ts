@@ -30,7 +30,7 @@ export class TimeslotService {
         fromH: slot.from.hour,
         fromM: slot.from.minutes,
         toH: slot.to.hour,
-        toM: slot.to.minutes
+        toM: slot.to.minutes //todo check why zero even if shouldnt
       };
     return this.http.post(this.dobookingURL, data);
   }

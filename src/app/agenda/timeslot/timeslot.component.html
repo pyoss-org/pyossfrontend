@@ -1,5 +1,5 @@
 <div class="timeslot" pyossBlock [color]="calculateColor(model.available)" >
-  <div class="btn-link" (click)="doBook()">Book</div>
+  <div *ngIf="model.available" class="btn-link" (click)="doBook()">Book</div>
   <pyoss-row>
     <div pyossCol="6">
       From:
