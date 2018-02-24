@@ -1,7 +1,7 @@
 import {DateTime} from './datetime';
 
 export interface Timeslot {
-    from: DateTime,
-    to: DateTime
+    from: DateTime;
+    to: DateTime;
     available: boolean;
 }

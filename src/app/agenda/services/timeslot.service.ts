@@ -4,12 +4,14 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs/Observable';
 import {Timeslot} from '../model/timeslot';
 import {environment} from '../../../environments/environment';
+import {Day} from '../model/day';
 
 
 @Injectable()
 export class TimeslotService {
 
     private getURL: string = environment.rootUrl + 'timeslots';
+    private getFirstURL: string = environment.rootUrl + 'day/nextavailable';
 
     constructor(private http: HttpClient) {
     }
@@ -17,5 +19,9 @@ export class TimeslotService {
     getAll(): Observable<Timeslot[]> {
         return this.http.get<Timeslot[]>(this.getURL);
     }
+
+  getFirstAvailableDay(): Observable<Day> {
+      return this.http.get<Day> (this.getFirstURL);
+  }
 
 }

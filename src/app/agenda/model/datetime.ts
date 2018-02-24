@@ -1,4 +1,4 @@
 export interface DateTime {
-    hour: number,
-    minutes: number
+    hour: number;
+    minutes: number;
 }

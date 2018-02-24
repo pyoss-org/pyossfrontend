@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {TimeslotService} from '../services/timeslot.service';
 import {Timeslot} from '../model/timeslot';
+import {Day} from '../model/day';
 
 @Component({
     selector: 'pyoss-day',
@@ -9,18 +10,14 @@ import {Timeslot} from '../model/timeslot';
 })
 export class DayComponent implements OnInit {
 
-    private title: string;
-
-    private slotsInDay: Array<Timeslot>;
+    private day: Day;
 
     constructor(private timeslotService: TimeslotService) {
     }
 
     ngOnInit() {
-        this.title = 'Monday';
-
-        this.timeslotService.getAll().subscribe(
-            data => this.slotsInDay = data,
+        this.timeslotService.getFirstAvailableDay().subscribe(
+            data => this.day = data,
         );
     }
 
