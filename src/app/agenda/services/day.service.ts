@@ -16,7 +16,10 @@ export class DayService {
 
     fetchFirstAvailableDay() {
         return this.http.get<Day>(this.getFirstURL)
-            .subscribe(days => this.currentDaySubject.next(days[0]));
+            .subscribe(days => this.sendNextDay(days[0]));
     }
 
+    private sendNextDay(day) {
+        this.currentDaySubject.next(day);
+    }
 }
