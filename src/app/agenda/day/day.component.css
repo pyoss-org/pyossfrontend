@@ -11,3 +11,8 @@
     font-size: x-large;
     text-align: center;
 }
+
+pyoss-timeslot {
+    padding-left: 0;
+    padding-right: 0;
+}
