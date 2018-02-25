@@ -12,7 +12,7 @@ export class TimeslotService {
 
     private getURL: string = environment.rootUrl + 'timeslots';
     private getFirstURL: string = environment.rootUrl + 'days?next=true';
-    private dobookingURL: string = environment.rootUrl + 'slot/book';
+    private dobookingURL: string = environment.rootUrl + 'slots';
 
     constructor(private http: HttpClient) {
     }
