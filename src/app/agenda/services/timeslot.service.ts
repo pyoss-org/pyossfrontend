@@ -16,10 +16,11 @@ export class TimeslotService {
     book(slot: Timeslot) {
         const data = {
             fromH: slot.from.hour,
-            fromM: slot.from.minutes,
+          fromM: slot.from.minute,
             toH: slot.to.hour,
-            toM: slot.to.minutes //todo check why zero even if shouldn't
+          toM: slot.to.minute
         };
+      console.log(data);
         this.http.post(this.dobookingURL, data)
             .subscribe();
     }
