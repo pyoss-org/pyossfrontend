@@ -10,7 +10,7 @@ export class DayService {
 
     public currentDaySubject: Subject<Day> = new Subject<Day>();
 
-    private availableDaysUrl: string = environment.rootUrl + 'é';
+  private availableDaysUrl: string = environment.rootUrl + 'days?next=true';
 
     constructor(private http: HttpClient) {
     }
