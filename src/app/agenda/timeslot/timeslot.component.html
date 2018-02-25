@@ -1,12 +1,13 @@
-<div class="timeslot" pyossBlock [color]="calculateColor(model.available)">
-<pyoss-row>
+<div class="timeslot" pyossBlock [color]="calculateColor(model.available)" >
+  <div *ngIf="model.available" class="btn-link" (click)="doBook()">Book</div>
+  <pyoss-row>
     <div pyossCol="6">
-        From:
-        <pyoss-timedisplay [model]="model.from"></pyoss-timedisplay>
+      From:
+      <pyoss-timedisplay [model]="model.from"></pyoss-timedisplay>
     </div>
     <div pyossCol="6">
-        To:
-        <pyoss-timedisplay [model]="model.to"></pyoss-timedisplay>
+      To:
+      <pyoss-timedisplay [model]="model.to"></pyoss-timedisplay>
     </div>
-</pyoss-row>
+  </pyoss-row>
 </div>

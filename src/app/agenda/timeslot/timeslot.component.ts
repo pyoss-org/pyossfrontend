@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Timeslot} from '../model/timeslot';
+import {TimeslotService} from '../services/timeslot.service';
 
 @Component({
     selector: 'pyoss-timeslot',
@@ -11,7 +12,7 @@ export class TimeslotComponent implements OnInit {
     @Input('model')
     private model: Timeslot;
 
-    constructor() {
+    constructor(private timeslotService: TimeslotService) {
     }
 
     ngOnInit() {
@@ -20,4 +21,12 @@ export class TimeslotComponent implements OnInit {
     calculateColor(available: boolean): string {
         return available ? '#AED581' : '#E57373'
     }
+
+  doBook() {
+    this.timeslotService.doBooking(this.model).subscribe(
+      () => (this.model.available = false),
+      error => console.log(error)
+    );
+  }
+
 }
