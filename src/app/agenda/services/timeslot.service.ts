@@ -11,7 +11,7 @@ import {Day} from '../model/day';
 export class TimeslotService {
 
     private getURL: string = environment.rootUrl + 'timeslots';
-    private getFirstURL: string = environment.rootUrl + 'day/nextavailable';
+    private getFirstURL: string = environment.rootUrl + 'days?next=true';
     private dobookingURL: string = environment.rootUrl + 'slot/book';
 
     constructor(private http: HttpClient) {
