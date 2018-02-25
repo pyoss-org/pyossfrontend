@@ -3,13 +3,14 @@ import {environment} from '../../../environments/environment';
 import {HttpClient} from '@angular/common/http';
 import {Day} from '../model/day';
 import {Subject} from 'rxjs/Subject';
+import {Page} from '../model/page';
 
 @Injectable()
 export class DayService {
 
     public currentDaySubject: Subject<Day> = new Subject<Day>();
 
-    private availableDaysUrl: string = environment.rootUrl + 'days?next=true';
+    private availableDaysUrl: string = environment.rootUrl + 'é';
 
     constructor(private http: HttpClient) {
     }
@@ -19,7 +20,7 @@ export class DayService {
     }
 
     fetchNextAvailableDayPlus(numberOfDays: number) {
-        return this.http.get<Day>(`${this.availableDaysUrl}&page=${numberOfDays}`)
+        return this.http.get<Page<Day>>(`${this.availableDaysUrl}&page=${numberOfDays}`)
             .subscribe(page => this.sendNextDay(page.content[0]));
     }
 

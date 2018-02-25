@@ -13,7 +13,7 @@ export class TimeslotComponent implements OnInit {
     private model: Timeslot;
 
     @Output('onBook')
-    private onBookEmitter: EventEmitter = new EventEmitter();
+    private onBookEmitter: EventEmitter<Timeslot> = new EventEmitter();
 
     constructor(private timeslotService: TimeslotService) {
     }
@@ -27,7 +27,7 @@ export class TimeslotComponent implements OnInit {
 
     doBook(toBook: Timeslot) {
         this.timeslotService.book(toBook);
-        this.onBookEmitter.emit();
+        this.onBookEmitter.emit(toBook);
     }
 
 }
