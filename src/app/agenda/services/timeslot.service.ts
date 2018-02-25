@@ -4,6 +4,7 @@ import {HttpClient} from '@angular/common/http';
 import {Timeslot} from '../model/timeslot';
 import {environment} from '../../../environments/environment';
 import {DayService} from './day.service';
+import {Logger} from './logger.service';
 
 
 @Injectable()
@@ -21,15 +22,11 @@ export class TimeslotService {
             toH: slot.to.hour,
             toM: slot.to.minutes //todo check why zero even if shouldn't
         };
-        return this.http.post(this.dobookingURL, data)
+        this.http.post(this.dobookingURL, data)
             .subscribe(
                 () => this.dayService.fetchFirstAvailableDay(),
-                (error) => TimeslotService.log(error)
+                (error) => Logger.log(error)
             );
-    }
-
-    private static log(message: string) {
-        console.log(message);
     }
 
 }
