@@ -35,15 +35,15 @@ export class DayComponent implements OnInit {
         this.updateDisplayedDay(--this.viewingDaysInAdvance);
     }
 
+    updateDay() {
+        this.updateDisplayedDay(this.viewingDaysInAdvance);
+    }
+
     private updateDisplayedDay(advanceDays: number) {
         this.dayService.fetchNextAvailableDayPlus(advanceDays);
     }
 
     previousIsEnabled() : boolean {
         return this.viewingDaysInAdvance !== 0;
-    }
-
-    updateDay() {
-        this.dayService.fetchNextAvailableDayPlus(this.viewingDaysInAdvance);
     }
 }
