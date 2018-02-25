@@ -16,7 +16,7 @@ export class DayService {
 
     fetchFirstAvailableDay() {
         return this.http.get<Day>(this.getFirstURL)
-            .subscribe(day => this.currentDaySubject.next(day));
+            .subscribe(days => this.currentDaySubject.next(days[0]));
     }
 
 }
