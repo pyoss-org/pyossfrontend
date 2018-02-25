@@ -1,7 +1,7 @@
 <div class="timeslot">
     <pyoss-row>
         <div pyossCol [col]="2">
-            <button *ngIf="model.available" (click)="doBook()" pyossButton pyossCol [col]="12">Book</button>
+            <button *ngIf="model.available" (click)="doBook(model)" pyossButton pyossCol [col]="12">Book</button>
         </div>
         <div pyossCol [col]="5" pyossBlock [color]="calculateColor(model.available)">
             From: <pyoss-timedisplay [model]="model.from"></pyoss-timedisplay>

@@ -28,17 +28,22 @@ export class DayComponent implements OnInit {
     }
 
     nextDay() {
-        this.dayService.fetchNextAvailableDayPlus(++this.viewingDaysInAdvance);
+        this.updateDisplayedDay(++this.viewingDaysInAdvance);
     }
 
     previousDay() {
-        if(this.viewingDaysInAdvance > 0) {
-            --this.viewingDaysInAdvance;
-        }
-        this.dayService.fetchNextAvailableDayPlus(this.viewingDaysInAdvance);
+        this.updateDisplayedDay(--this.viewingDaysInAdvance);
+    }
+
+    private updateDisplayedDay(advanceDays: number) {
+        this.dayService.fetchNextAvailableDayPlus(advanceDays);
     }
 
     previousIsEnabled() : boolean {
         return this.viewingDaysInAdvance !== 0;
+    }
+
+    updateDay() {
+        this.dayService.fetchNextAvailableDayPlus(this.viewingDaysInAdvance);
     }
 }

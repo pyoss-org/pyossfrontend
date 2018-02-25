@@ -6,7 +6,7 @@
         <button (click)="nextDay()" pyossCol [col]="4" pyossButton>Next</button>
     </pyoss-row>
     <pyoss-row *ngFor="let slot of day?.slots">
-        <pyoss-timeslot [model]="slot" pyossCol>
+        <pyoss-timeslot (onBook)="updateDay()" [model]="slot" pyossCol>
         </pyoss-timeslot>
     </pyoss-row>
 </div>

@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Timeslot} from '../model/timeslot';
 import {TimeslotService} from '../services/timeslot.service';
 
@@ -12,6 +12,9 @@ export class TimeslotComponent implements OnInit {
     @Input('model')
     private model: Timeslot;
 
+    @Output('onBook')
+    private onBookEmitter: EventEmitter = new EventEmitter();
+
     constructor(private timeslotService: TimeslotService) {
     }
 
@@ -19,11 +22,12 @@ export class TimeslotComponent implements OnInit {
     }
 
     calculateColor(available: boolean): string {
-        return available ? '#AED581' : '#E57373'
+        return available ? '#AED581' : '#E57373';
     }
 
-  doBook() {
-    this.timeslotService.book(this.model);
-  }
+    doBook(toBook: Timeslot) {
+        this.timeslotService.book(toBook);
+        this.onBookEmitter.emit();
+    }
 
 }

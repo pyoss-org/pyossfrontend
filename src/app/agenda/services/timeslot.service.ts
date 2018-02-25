@@ -3,8 +3,6 @@ import 'rxjs/add/operator/map';
 import {HttpClient} from '@angular/common/http';
 import {Timeslot} from '../model/timeslot';
 import {environment} from '../../../environments/environment';
-import {DayService} from './day.service';
-import {Logger} from './logger.service';
 
 
 @Injectable()
@@ -12,7 +10,7 @@ export class TimeslotService {
 
     private dobookingURL: string = environment.rootUrl + 'slots';
 
-    constructor(private http: HttpClient, private dayService: DayService) {
+    constructor(private http: HttpClient) {
     }
 
     book(slot: Timeslot) {
@@ -23,10 +21,7 @@ export class TimeslotService {
             toM: slot.to.minutes //todo check why zero even if shouldn't
         };
         this.http.post(this.dobookingURL, data)
-            .subscribe(
-                () => this.dayService.fetchNextAvailableDay(),
-                (error) => Logger.log(error)
-            );
+            .subscribe();
     }
 
 }
