@@ -1,9 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {TimeslotService} from '../services/timeslot.service';
-import {Timeslot} from '../model/timeslot';
 import {Day} from '../model/day';
 import {DayService} from '../services/day.service';
-import {Subject} from 'rxjs/Subject';
 
 @Component({
     selector: 'pyoss-day',
@@ -13,6 +11,7 @@ import {Subject} from 'rxjs/Subject';
 export class DayComponent implements OnInit {
 
     private day: Day;
+    private viewingDaysInAdvance: number;
 
     constructor(private timeslotService: TimeslotService, private dayService: DayService) {
     }
@@ -20,10 +19,26 @@ export class DayComponent implements OnInit {
     ngOnInit() {
         this.registerCurrentDaySubscription();
 
-        this.dayService.fetchFirstAvailableDay();
+        this.dayService.fetchNextAvailableDay();
+        this.viewingDaysInAdvance = 0;
     }
 
     private registerCurrentDaySubscription() {
         this.dayService.currentDaySubject.subscribe(day => this.day = day);
+    }
+
+    nextDay() {
+        this.dayService.fetchNextAvailableDayPlus(++this.viewingDaysInAdvance);
+    }
+
+    previousDay() {
+        if(this.viewingDaysInAdvance > 0) {
+            --this.viewingDaysInAdvance;
+        }
+        this.dayService.fetchNextAvailableDayPlus(this.viewingDaysInAdvance);
+    }
+
+    previousIsEnabled() : boolean {
+        return this.viewingDaysInAdvance !== 0;
     }
 }

@@ -1,16 +1,16 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {ButtonComponent} from './button/button.component';
+import {ButtonDirective} from './button/button.directive';
 
 @NgModule({
     imports: [
         CommonModule,
     ],
     declarations: [
-        ButtonComponent,
+        ButtonDirective,
     ],
     exports: [
-        ButtonComponent,
+        ButtonDirective,
     ],
 })
 export class PyossFormModule {

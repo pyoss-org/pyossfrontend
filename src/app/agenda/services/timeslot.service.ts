@@ -24,7 +24,7 @@ export class TimeslotService {
         };
         this.http.post(this.dobookingURL, data)
             .subscribe(
-                () => this.dayService.fetchFirstAvailableDay(),
+                () => this.dayService.fetchNextAvailableDay(),
                 (error) => Logger.log(error)
             );
     }

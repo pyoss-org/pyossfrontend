@@ -1,8 +1,8 @@
 <div class="day">
   <pyoss-row  *ngIf="day" class="header">
-    <pyoss-button pyossCol [col]="4">Previous</pyoss-button>
+    <button (click)="previousDay()" [disabled]="!previousIsEnabled()" pyossCol [col]="4" pyossButton>Previous</button>
     <pyoss-datedisplay [model]="day.date" pyossCol [col]="4"></pyoss-datedisplay>
-    <pyoss-button pyossCol [col]="4">Next</pyoss-button>
+    <button (click)="nextDay()" pyossCol [col]="4" pyossButton>Next</button>
   </pyoss-row>
   <div *ngIf="day">
     <pyoss-row *ngFor="let slot of day.slots">

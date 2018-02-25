@@ -9,14 +9,18 @@ export class DayService {
 
     public currentDaySubject: Subject<Day> = new Subject<Day>();
 
-    private getFirstURL: string = environment.rootUrl + 'days?next=true';
+    private availableDaysUrl: string = environment.rootUrl + 'days?next=true';
 
     constructor(private http: HttpClient) {
     }
 
-    fetchFirstAvailableDay() {
-        return this.http.get<Day>(this.getFirstURL)
-            .subscribe(days => this.sendNextDay(days[0]));
+    fetchNextAvailableDay() {
+        this.fetchNextAvailableDayPlus(0);
+    }
+
+    fetchNextAvailableDayPlus(numberOfDays: number) {
+        return this.http.get<Day>(`${this.availableDaysUrl}&page=${numberOfDays}`)
+            .subscribe(page => this.sendNextDay(page.content[0]));
     }
 
     private sendNextDay(day) {
