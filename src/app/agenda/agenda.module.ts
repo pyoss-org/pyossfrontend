@@ -8,6 +8,7 @@ import {PyossGridModule} from '../pyoss-grid/pyoss-grid.module';
 import {PyossHelperModule} from '../pyoss-helper/pyoss-helper.module';
 import {PyossFormModule} from '../pyoss-form/pyoss-form.module';
 import {PyossDisplayModule} from '../pyoss-display/pyoss-display.module';
+import {DayService} from './services/day.service';
 
 @NgModule({
     imports: [
@@ -25,6 +26,7 @@ import {PyossDisplayModule} from '../pyoss-display/pyoss-display.module';
     ],
     providers: [
         TimeslotService,
+        DayService,
     ],
     exports: [
         AgendaComponent,
