@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {TimeslotService} from '../services/timeslot.service';
 import {Day} from '../model/day';
 import {DayService} from '../services/day.service';
+import {Timeslot} from '../model/timeslot';
 
 @Component({
     selector: 'pyoss-day',
@@ -35,8 +36,9 @@ export class DayComponent implements OnInit {
         this.updateDisplayedDay(--this.viewingDaysInAdvance);
     }
 
-    updateDay() {
-        this.updateDisplayedDay(this.viewingDaysInAdvance);
+  updateDay(event: Timeslot) {
+    event.available = false;
+    // this.updateDisplayedDay(this.viewingDaysInAdvance);
     }
 
     private updateDisplayedDay(advanceDays: number) {

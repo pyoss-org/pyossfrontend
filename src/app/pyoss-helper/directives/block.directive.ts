@@ -1,19 +1,14 @@
-import {Directive, ElementRef, Input, OnInit} from '@angular/core';
+import {Directive, ElementRef, Input, OnChanges, SimpleChanges} from '@angular/core';
 
 @Directive({
     selector: '[pyossBlock]',
 })
-export class BlockDirective implements OnInit {
+export class BlockDirective implements OnChanges {
 
     @Input('color')
     private color: string;
 
     constructor(private el: ElementRef) {
-    }
-
-
-    ngOnInit(): void {
-        this.addBackgroundColor(BlockDirective.calculateIfAbsent(this.color));
     }
 
     private addBackgroundColor(color: string) {
@@ -26,4 +21,8 @@ export class BlockDirective implements OnInit {
         }
         return color;
     }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    this.addBackgroundColor(BlockDirective.calculateIfAbsent(this.color));
+  }
 }
