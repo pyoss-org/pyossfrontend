@@ -1,0 +1,23 @@
+<pyoss-row>
+  <div class="title">
+    <h2>Customer X's Configuration</h2>
+  </div>
+</pyoss-row>
+<div *ngIf="config">
+  <pyoss-row>
+    Open Daily from
+    <pyoss-number-input [input]="config.openingTime" [label]="''"></pyoss-number-input>
+    O' clock until
+    <pyoss-number-input [input]="config.closingTime" [label]="''"></pyoss-number-input>
+    O' clock
+  </pyoss-row>
+  <pyoss-row>
+    <pyoss-number-input [input]="config.minutesPerSlot" [label]="'minutesPerSlot'"></pyoss-number-input>
+  </pyoss-row>
+
+  <button (click)="save()" pyossButton pyossCol [col]="12">Save</button>
+
+</div>
+<div *ngIf="!config">
+  Loading ...
+</div>
