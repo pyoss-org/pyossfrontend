@@ -1,23 +1,29 @@
 <pyoss-row>
-  <div class="title">
-    <h2>Customer X's Configuration</h2>
-  </div>
+    <div class="title">
+        <h2>Customer X's Configuration</h2>
+    </div>
 </pyoss-row>
-<div *ngIf="config">
-  <pyoss-row>
-    Open Daily from
-    <pyoss-number-input [input]="config.openingTime" [label]="''"></pyoss-number-input>
-    O' clock until
-    <pyoss-number-input [input]="config.closingTime" [label]="''"></pyoss-number-input>
-    O' clock
-  </pyoss-row>
-  <pyoss-row>
-    <pyoss-number-input [input]="config.minutesPerSlot" [label]="'minutesPerSlot'"></pyoss-number-input>
-  </pyoss-row>
 
-  <button (click)="save()" pyossButton pyossCol [col]="12">Save</button>
+<div *ngIf="config" class="content">
+    <h4>Daily opening times</h4>
+    <pyoss-row>
+        <div pyossCol [col]="2">
+            <pyoss-number-input [(ngModel)]="config.openingTime" label="From"></pyoss-number-input>
+        </div>
+        <div pyossCol [col]="2">
+            <pyoss-number-input [(ngModel)]="config.closingTime" label="Until"></pyoss-number-input>
+        </div>
+    </pyoss-row>
+
+    <h4>General configuration</h4>
+    <pyoss-row>
+        <div pyossCol [col]="3">
+            <pyoss-number-input [(ngModel)]="config.minutesPerSlot" label="Minutes per slot"></pyoss-number-input>
+        </div>
+    </pyoss-row>
+    <button (click)="save()" pyossButton pyossCol [col]="12">Save</button>
 
 </div>
 <div *ngIf="!config">
-  Loading ...
+    Loading ...
 </div>

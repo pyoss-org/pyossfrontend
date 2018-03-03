@@ -1,1 +1,6 @@
-{{label}}<input [(ngModel)]="input" type="number" />
+<div class="form-group">
+    <label>
+        {{ label }}
+        <input [disabled]="disabled" [(ngModel)]="value" (blur)="onBlur()" type="number" class="form-control"/>
+    </label>
+</div>

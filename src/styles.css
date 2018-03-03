@@ -31,3 +31,15 @@ button:disabled {
 button:disabled:hover {
     cursor: auto;
 }
+
+.title {
+    width: 100%;
+    height: 60px;
+
+    text-align: center;
+    border-bottom: 1px solid #424242;
+
+    margin-left: 27px;
+    margin-right: 27px;
+
+}

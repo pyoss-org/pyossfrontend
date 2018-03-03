@@ -6,10 +6,14 @@ import {PyossFormModule} from '../pyoss-form/pyoss-form.module';
 import {PyossDisplayModule} from '../pyoss-display/pyoss-display.module';
 import {OwnerComponent} from './owner/owner.component';
 import {OwnerService} from './owner/services/owner.service';
+import {BrowserModule} from '@angular/platform-browser';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
     imports: [
         CommonModule,
+        BrowserModule,
+        FormsModule,
 
         PyossFormModule,
         PyossDisplayModule,
@@ -24,7 +28,7 @@ import {OwnerService} from './owner/services/owner.service';
     ],
     exports: [
         OwnerComponent,
-    ],
+    ]
 })
 
 export class OwnerModule {
