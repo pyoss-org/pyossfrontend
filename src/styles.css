@@ -1,45 +1,99 @@
+@font-face {
+    font-family: 'GreatCities';
+    src: url(assets/fonts/great-cities.ttf);
+}
+
+@font-face {
+    font-family: 'ChampAndLim';
+    src: url(assets/fonts/champ-and-lim.ttf);
+}
+
 body {
-    background: #424242;
-}
-
-
-button {
-    height: 50px;
-    width: 100%;
-
-    text-align: center;
-    line-height: 45px;
-
-    border: none;
-    border-radius: 0;
-
-    color: #212529;
-    background: #dddddd;
-}
-
-button:hover {
-    background-color: #42A5F5;
-    color: white;
-    cursor: pointer;
-}
-
-button:disabled {
-    color: #c3c3c3;
-    background: #dddddd;
-}
-
-button:disabled:hover {
-    cursor: auto;
+    background: #eaeaea;
+    font-family: ChampAndLim, serif;
 }
 
 .title {
-    width: 100%;
-    height: 60px;
-
+    color: whitesmoke;
     text-align: center;
-    border-bottom: 1px solid #424242;
 
-    margin-left: 27px;
-    margin-right: 27px;
+    height: 120px;
 
+    background: #8bacbd;
+
+    margin-left: calc(-100vw / 2 + 500px / 2);
+    margin-right: calc(-100vw / 2 + 500px / 2);
+}
+
+.title > h2 {
+    font-family: ChampAndLim, serif;
+    line-height: 120px;
+    font-size: 28pt;
+}
+
+
+.date-display {
+    text-align: center;
+}
+
+button {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    padding: 10px 45px;
+    font-family: inherit;
+    font-size: 1.4rem;
+    font-weight: 300;
+    line-height: normal;
+    border: 0;
+    border-radius: 0.4rem;
+    box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.4);
+    background: #8bacbd;
+    color: #eaeaea;
+    cursor: pointer;
+    transition: background 250ms, box-shadow 250ms;
+}
+
+button:focus {
+    outline: none;
+}
+
+button:hover {
+     box-shadow: -2px 2px 16px rgba(0, 0, 0, 0.6);
+ }
+
+button:disabled {
+    background: #eaeaea;
+    box-shadow: none;
+    cursor: auto;
+}
+
+.page-wrapper {
+    margin-top: 15px;
+}
+
+.page-content {
+    margin-top: 30px;
+}
+
+.day-header {
+    width: 40%;
+    height: 50px;
+    line-height: 50px;
+    margin: 0 auto 35px;
+}
+
+.day-header > button {
+
+}
+
+.slot {
+    text-align: center;
+    width: 40%;
+    margin: 3px auto 0;
+}
+
+.time-display {
+    line-height: 50px;
+    display: inline;
 }

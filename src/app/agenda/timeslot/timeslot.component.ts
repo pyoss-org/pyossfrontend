@@ -15,19 +15,33 @@ export class TimeslotComponent implements OnInit {
     @Output('onBook')
     private onBookEmitter: EventEmitter<Timeslot> = new EventEmitter();
 
+    private backgroundColor: string;
+
     constructor(private timeslotService: TimeslotService) {
     }
 
     ngOnInit() {
+        this.backgroundColor = this.calculateColor(this.model.available);
     }
 
     calculateColor(available: boolean): string {
-        return available ? '#AED581' : '#E57373';
+        return available ? this.backgroundColor = '#AED581' : this.backgroundColor = '#E57373';
     }
 
     doBook(toBook: Timeslot) {
-        this.timeslotService.book(toBook);
-        this.onBookEmitter.emit(toBook);
+        if (this.model.available) {
+            this.timeslotService.book(toBook);
+            this.onBookEmitter.emit(toBook);
+        }
     }
 
+    enterMouse() {
+        if (this.model.available) {
+            this.backgroundColor = '#ddd';
+        }
+    }
+
+    leaveMouse(available: boolean) {
+        this.calculateColor(available);
+    }
 }

@@ -1,13 +1,8 @@
-<div class="timeslot">
-    <pyoss-row>
-        <div pyossCol [col]="2">
-            <button *ngIf="model.available" (click)="doBook(model)" pyossButton pyossCol [col]="12">Book</button>
-        </div>
-        <div pyossCol [col]="5" pyossBlock [color]="calculateColor(model.available)">
-            From: <pyoss-timedisplay [model]="model.from"></pyoss-timedisplay>
-        </div>
-        <div pyossCol [col]="5" pyossBlock [color]="calculateColor(model.available)">
-            To: <pyoss-timedisplay [model]="model.to" ></pyoss-timedisplay>
-        </div>
-    </pyoss-row>
-</div>
+<pyoss-row class="slot">
+    <div class="slot-div" pyossCol [col]="12" pyossBlock [color]="backgroundColor"
+         (mouseenter)="enterMouse()"
+         (mouseleave)="leaveMouse(model.available)"
+         (click)="doBook(model)">
+        <pyoss-timedisplay [model]="model.from"></pyoss-timedisplay> - <pyoss-timedisplay [model]="model.to"></pyoss-timedisplay>
+    </div>
+</pyoss-row>

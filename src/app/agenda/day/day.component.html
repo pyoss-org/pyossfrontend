@@ -1,12 +1,15 @@
 <div class="day">
-    <pyoss-row *ngIf="day" class="header">
-        <button (click)="previousDay()" [disabled]="!previousIsEnabled()" pyossCol [col]="4" pyossButton>Previous
+    <pyoss-row *ngIf="day" class="day-header">
+        <button (click)="previousDay()" [disabled]="!previousIsEnabled()" pyossCol [col]="3" pyossButton>
+            <
         </button>
-        <pyoss-datedisplay [model]="day.date" pyossCol [col]="4"></pyoss-datedisplay>
-        <button (click)="nextDay()" pyossCol [col]="4" pyossButton>Next</button>
+        <pyoss-datedisplay [model]="day.date" pyossCol [col]="6"></pyoss-datedisplay>
+        <button (click)="nextDay()" pyossCol [col]="3" pyossButton>
+            >
+        </button>
     </pyoss-row>
-    <pyoss-row *ngFor="let slot of day?.slots">
-      <pyoss-timeslot (onBook)="updateDay($event)" [model]="slot" pyossCol>
-        </pyoss-timeslot>
-    </pyoss-row>
+        <pyoss-row *ngFor="let slot of day?.slots">
+            <pyoss-timeslot (onBook)="updateDay($event)" [model]="slot" pyossCol>
+            </pyoss-timeslot>
+        </pyoss-row>
 </div>
